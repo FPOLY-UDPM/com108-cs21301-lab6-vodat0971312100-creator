@@ -1,7 +1,7 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
- * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
+ * Họ và tên: [Nguyễn Võ Minh Đạt]
+ * MSSV:      [PS49299]
+ * Lớp:       [COM108]
  *****************************************************************************/
 
 //  BÀI 3: SẮP XẾP MẢNG THEO THỨ TỪ GIẢM DẦN 
@@ -9,4 +9,37 @@
 //  Output: Xuất ra màn hình kết quả mảng đã sắp xếp 
 
 // VIẾT CODE Ở ĐÂY
+#include <stdio.h>
 
+int main() {
+    int n;
+    printf("Nhap so phan tu: ");
+    scanf("%d", &n);
+
+    int a[100]; // giả sử tối đa 100 phần tử
+
+    // Nhap mang
+    printf("Nhap cac phan tu cua mang:\n");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    // Sap xep giam dan (Bubble Sort)
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (a[i] < a[j]) {
+                int temp = a[i];
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+
+    // Xuat mang sau khi sap xep
+    printf("Mang sau khi sap xep giam dan:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}
